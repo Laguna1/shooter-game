@@ -187,7 +187,7 @@ class SceneMain extends Phaser.Scene {
     const arr = [];
     for (let i = 0; i < this.enemies.getChildren().length; i++) {
       const enemy = this.enemies.getChildren()[i];
-      if (enemy.getData('type') == type) {
+      if (enemy.getData('type') === type) {
         arr.push(enemy);
       }
     }
@@ -254,7 +254,7 @@ class SceneMain extends Phaser.Scene {
       }
     }
 
-    for (var i = 0; i < this.playerLasers.getChildren().length; i++) {
+    for (let i = 0; i < this.playerLasers.getChildren().length; i++) {
       var laser = this.playerLasers.getChildren()[i];
       laser.update();
       if (
@@ -269,7 +269,7 @@ class SceneMain extends Phaser.Scene {
       }
     }
 
-    for (var i = 0; i < this.backgrounds.length; i++) {
+    for (let i = 0; i < this.backgrounds.length; i++) {
       this.backgrounds[i].update();
     }
   }

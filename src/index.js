@@ -1,11 +1,14 @@
-import SceneMainMenu from './SceneMainMenu';
-import SceneMain from './SceneMain';
-import SceneGameOver from './SceneGameOver';
+/* eslint-disable no-use-before-define */
+
+import Phaser from 'phaser';
+import SceneMainMenu from './scenes/SceneMainMenu';
+import SceneMain from './scenes/SceneMain';
+import SceneGameOver from './scenes/SceneGameOver';
 
 const config = {
   type: Phaser.AUTO,
-  width: 480,
-  height: 640,
+  width: 600,
+  height: 800,
   backgroundColor: 'black',
   physics: {
     default: 'arcade',
@@ -18,4 +21,5 @@ const config = {
   roundPixels: true,
 };
 
+// eslint-disable-next-line no-unused-vars
 const game = new Phaser.Game(config);

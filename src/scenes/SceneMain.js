@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import Player from '../objects/player';
 
 export default class SceneMain extends Phaser.Scene {
   constructor() {

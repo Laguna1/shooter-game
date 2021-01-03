@@ -18,6 +18,7 @@ export default class Entity extends Phaser.GameObjects.Sprite {
       this.play('sprExplosion'); // play the animation
 
       // pick a random explosion sound within the array we defined in this.sfx in SceneMain
+      // eslint-disable-next-line max-len
       this.scene.sfx.explosions[Phaser.Math.Between(0, this.scene.sfx.explosions.length - 1)].play();
 
       if (this.shootTimer !== undefined) {

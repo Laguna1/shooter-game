@@ -5,37 +5,51 @@ import GunShip from '../objects/gunship';
 import ChaserShip from '../objects/chaserShip';
 import CarrierShip from '../objects/carrierShip';
 
+import sprBg0 from '../assets/sprBg0.png';
+import sprBg1 from '../assets/sprBg1.png';
+import sprExplosion from '../assets/sprExplosion.png';
+import sprEnemy0 from '../assets/sprEnemy0.png';
+import sprEnemy1 from '../assets/sprEnemy1.png';
+import sprEnemy2 from '../assets/sprEnemy2.png';
+import sprLaserEnemy0 from '../assets/sprLaserEnemy0.png';
+import sprLaserPlayer from '../assets/sprLaserPlayer.png';
+import sprPlayer from '../assets/sprPlayer.png';
+
+import sndExplode0 from '../assets/sndExplode0.wav';
+import sndExplode1 from '../assets/sndExplode1.wav';
+import sndLaser from '../assets/sndLaser.wav';
+
 export default class SceneMain extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneGMain' });
   }
 
   preload() {
-    this.load.image('sprBg0', '../src/assets/sprBg0.png');
-    this.load.image('sprBg1', '../src/assets/sprBg1.png');
-    this.load.spritesheet('sprExplosion', '../src/assets/sprExplosion.png', {
+    this.load.image('sprBg0', sprBg0);
+    this.load.image('sprBg1', sprBg1);
+    this.load.spritesheet('sprExplosion', sprExplosion, {
       frameWidth: 32,
       frameHeight: 32,
     });
 
-    this.load.spritesheet('sprEnemy0', '../src/assets/sprEnemy0.png', {
+    this.load.spritesheet('sprEnemy0', sprEnemy0, {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.image('sprEnemy1', '../src/assets/sprEnemy1.png');
-    this.load.spritesheet('sprEnemy2', '../src/assets/sprEnemy2.png', {
+    this.load.image('sprEnemy1', sprEnemy1);
+    this.load.spritesheet('sprEnemy2', sprEnemy2, {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.image('sprLaserEnemy0', '../src/assets/sprLaserEnemy0.png');
-    this.load.image('sprLaserPlayer', '../src/assets/sprLaserPlayer.png');
-    this.load.spritesheet('sprPlayer', '../src/assets/sprPlayer.png', {
+    this.load.image('sprLaserEnemy0', sprLaserEnemy0);
+    this.load.image('sprLaserPlayer', sprLaserPlayer);
+    this.load.spritesheet('sprPlayer', sprPlayer, {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.audio('sndExplode0', '../src/assets/sndExplode0.wav');
-    this.load.audio('sndExplode1', '../src/assets/sndExplode1.wav');
-    this.load.audio('sndLaser', '../src/assets/sndLaser.wav');
+    this.load.audio('sndExplode0', sndExplode0);
+    this.load.audio('sndExplode1', sndExplode1);
+    this.load.audio('sndLaser', sndLaser);
   }
 
   create() {
@@ -45,6 +59,7 @@ export default class SceneMain extends Phaser.Scene {
       this.game.config.height * 0.5,
       'sprPlayer',
     );
+    console.log(this.player);
 
     this.anims.create({
       key: 'sprEnemy0',
@@ -82,15 +97,15 @@ export default class SceneMain extends Phaser.Scene {
       laser: this.sound.add('sndLaser'),
     };
     this.backgrounds = [];
-    for (let i = 0; i < 5; i += 1) { // create five scrolling backgrounds
+    for (let i = 0; i < 5; i += 1) {
       const bg = new ScrollingBackground(this, 'sprBg0', i * 10);
       this.backgrounds.push(bg);
     }
 
-    this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
-    this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
-    this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
-    this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+    this.keyUp = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
+    this.keyDown = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN);
+    this.keyLeft = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
+    this.keyRight = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
     this.enemies = this.add.group();
@@ -160,30 +175,21 @@ export default class SceneMain extends Phaser.Scene {
         enemy.explode(true);
       }
     });
-
-    this.physics.add.overlap(this.player, this.enemyLasers, (player, laser) => {
-      if (!player.getData('isDead')
-        && !laser.getData('isDead')) {
-        player.explode(false);
-        player.onDestroy();
-        laser.destroy();
-      }
-    });
   }
 
   update() {
     if (!this.player.getData('isDead')) {
       this.player.update();
 
-      if (this.keyW.isDown) {
+      if (this.keyUp.isDown) {
         this.player.moveUp();
-      } else if (this.keyS.isDown) {
+      } else if (this.keyDown.isDown) {
         this.player.moveDown();
       }
 
-      if (this.keyA.isDown) {
+      if (this.keyLeft.isDown) {
         this.player.moveLeft();
-      } else if (this.keyD.isDown) {
+      } else if (this.keyRight.isDown) {
         this.player.moveRight();
       }
 

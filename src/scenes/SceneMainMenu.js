@@ -16,8 +16,7 @@ export default class SceneMainMenu extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneMainMenu' });
   }
-
-  preload() {
+   preload() {
     this.load.image('sprBg0', sprBg0);
     this.load.image('sprBg1', sprBg1);
     this.load.image('sprBtnPlay', sprBtnPlay);
@@ -50,14 +49,14 @@ export default class SceneMainMenu extends Phaser.Scene {
       this.sfx.btnOver.play();
     }, this);
 
-    // this.btnPlay.on('pointerout', () => {
-    //   this.setTexture('sprBtnPlay');
-    // });
+    this.btnPlay.on('pointerout', () => {
+      this.setTexture('sprBtnPlay');
+    });
 
-    // this.btnPlay.on('pointerdown', () => {
-    //   this.btnPlay.setTexture('sprBtnPlayDown');
-    //   this.sfx.btnDown.play();
-    // }, this);
+    this.btnPlay.on('pointerdown', () => {
+      this.btnPlay.setTexture('sprBtnPlayDown');
+      this.sfx.btnDown.play();
+    }, this);
 
     this.btnPlay.on('pointerup', () => {
       this.btnPlay.setTexture('sprBtnPlay');
@@ -74,18 +73,18 @@ export default class SceneMainMenu extends Phaser.Scene {
 
     this.title.setOrigin(0.5);
 
-    this.backgrounds = [];
-    for (let i = 0; i < 5; i += 1) {
-      const keys = ['sprBg0', 'sprBg1'];
-      const key = keys[Phaser.Math.Between(0, keys.length - 1)];
-      const bg = new ScrollingBackground(this, key, i * 10);
-      this.backgrounds.push(bg);
-    }
+  //   this.backgrounds = [];
+  //   for (let i = 0; i < 5; i += 1) {
+  //     const keys = ['sprBg0', 'sprBg1'];
+  //     const key = keys[Phaser.Math.Between(0, keys.length - 1)];
+  //     const bg = new ScrollingBackground(this, key, i * 10);
+  //     this.backgrounds.push(bg);
+  //   }
   }
 
-  update() {
-    for (let i = 0; i < this.backgrounds.length; i += 1) {
-      this.backgrounds[i].update();
-    }
-  }
+  // update() {
+  //   for (let i = 0; i < this.backgrounds.length; i += 1) {
+  //     this.backgrounds[i].update();
+  //   }
+  // }
 }

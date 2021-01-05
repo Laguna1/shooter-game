@@ -1,3 +1,5 @@
+import Phaser from 'phaser';
+
 class Entity extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y, key, type) {
     super(scene, x, y, key);
@@ -27,7 +29,7 @@ class Entity extends Phaser.GameObjects.Sprite {
       this.body.setVelocity(0, 0);
       this.on(
         'animationcomplete',
-        function () {
+        () => {
           if (canDestroy) {
             this.destroy();
           } else {
@@ -41,7 +43,7 @@ class Entity extends Phaser.GameObjects.Sprite {
   }
 }
 
-export class Player extends Entity {
+export default class Player extends Entity {
   constructor(scene, x, y, key) {
     super(scene, x, y, key, 'Player');
 
@@ -196,41 +198,4 @@ export class CarrierShip extends Entity {
   }
 }
 
-export class ScrollingBackground {
-  constructor(scene, key, velocityY) {
-    this.scene = scene;
-    this.key = key;
-    this.velocityY = velocityY;
 
-    this.layers = this.scene.add.group();
-
-    this.createLayers();
-  }
-
-  createLayers() {
-    for (let i = 0; i < 2; i++) {
-      // creating two backgrounds will allow a continuous flow giving the illusion that they are moving.
-      const layer = this.scene.add.sprite(0, 0, this.key);
-      layer.y = layer.displayHeight * i;
-      const flipX = Phaser.Math.Between(0, 10) >= 5 ? -1 : 1;
-      const flipY = Phaser.Math.Between(0, 10) >= 5 ? -1 : 1;
-      layer.setScale(flipX * 2, flipY * 2);
-      layer.setDepth(-5 - (i - 1));
-      this.scene.physics.world.enableBody(layer, 0);
-      layer.body.velocity.y = this.velocityY;
-
-      this.layers.add(layer);
-    }
-  }
-
-  update() {
-    if (this.layers.getChildren()[0].y > 0) {
-      for (let i = 0; i < this.layers.getChildren().length; i++) {
-        const layer = this.layers.getChildren()[i];
-        layer.y = -layer.displayHeight + layer.displayHeight * i;
-      }
-    }
-  }
-}
-
-export default Player;

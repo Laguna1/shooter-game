@@ -1,7 +1,9 @@
 import Phaser from 'phaser';
 import ScrollingBackground from './background';
-import Player, { CarrierShip, ChaserShip, GunShip,
-} from '../Entities';
+import Player from '../objects/Entities';
+import GunShip from '../objects/Gunship';
+import CarrierShip from '../objects/CarrierShip';
+import ChaserShip from '../objects/ChaserShip';
 
 import sprExplosion from '../assets/sprExplosion.png';
 import sprEnemy0 from '../assets/sprEnemy0.png';

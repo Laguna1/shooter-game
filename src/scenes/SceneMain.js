@@ -11,31 +11,31 @@ export default class SceneMain extends Phaser.Scene {
 
   }
   preload() {
-    this.load.image('sprBg0', '../src/assets/sprBg0.png');
-    this.load.image('sprBg1', '../src/assets/sprBg1.png');
-    this.load.spritesheet('sprExplosion', '../src/assets/sprExplosion', {
+    this.load.image('sprBg0', sprBg0);
+    this.load.image('sprBg1', sprBg1);
+    this.load.spritesheet('sprExplosion', sprExplosion, {
       frameWidth: 32,
       frameHeight: 32,
     });
 
-    this.load.spritesheet('sprEnemy0', '../src/assets/sprEnemy0.png', {
+    this.load.spritesheet('sprEnemy0', sprEnemy0, {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.image('sprEnemy1', '../src/assets/sprEnemy1.png');
-    this.load.spritesheet('sprEnemy2', '..src//assets/sprEnemy2.png', {
+    this.load.image('sprEnemy1', sprEnemy1);
+    this.load.spritesheet('sprEnemy2', sprEnemy2, {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.image('sprLaserEnemy0', '../src/assets/sprLaserEnemy0.png');
-    this.load.image('sprLaserPlayer', '../src/assets/sprLaserPlayer.png');
-    this.load.spritesheet('sprPlayer', '../src/assets/sprPlayer.png', {
+    this.load.image('sprLaserEnemy0', sprLaserEnemy0);
+    this.load.image('sprLaserPlayer', sprLaserPlayer);
+    this.load.spritesheet('sprPlayer', sprPlayer, {
       frameWidth: 16,
       frameHeight: 16,
     });
-    this.load.audio('sndExplode0', '../src/assets/sndExplode0.wav');
-    this.load.audio('sndExplode1', '../src/assets/sndExplode1.wav');
-    this.load.audio('sndLaser', '../src/assets/sndLaser.wav');
+    this.load.audio('sndExplode0', sndExplode0);
+    this.load.audio('sndExplode1', sndExplode1);
+    this.load.audio('sndLaser', sndLaser);
   }
 
   create() {

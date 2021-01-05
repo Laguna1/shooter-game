@@ -7,17 +7,17 @@ export default class SceneMainMenu extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('sprBg0', '../src/assets/sprBg0.png');
-        this.load.image('sprBg1', '../src/assets/sprBg1.png');
-        this.load.image('sprBtnPlay', '../src/assets/sprBtnPlay.png');
-        this.load.image('sprBtnPlayHover', '../src/assets/sprBtnPlayHover.png');
-        this.load.image('sprBtnPlayDown', '../src/src/assets/sprBtnPlayDown.png');
-        this.load.image('sprBtnRestart', '../src/assets/sprBtnRestart.png');
-        this.load.image('sprBtnRestartHover', '../src/assets/sprBtnRestartHover.png');
-        this.load.image('sprBtnRestartDown', '../src/assets/sprBtnRestartDown.png');
+        this.load.image('sprBg0', sprBg0);
+        this.load.image('sprBg1', sprBg1);
+        this.load.image('sprBtnPlay', sprBtnPlay);
+        this.load.image('sprBtnPlayHover', sprBtnPlayHover);
+        this.load.image('sprBtnPlayDown', prBtnPlayDown);
+        this.load.image('sprBtnRestart', sprBtnRestart);
+        this.load.image('sprBtnRestartHover', sprBtnRestartHover);
+        this.load.image('sprBtnRestartDown', sprBtnRestartDown);
     
-        this.load.audio('sndBtnOver', '../src/assets/sndBtnOver.wav');
-        this.load.audio('sndBtnDown', '../src/assets/sndBtnDown.wav');
+        this.load.audio('sndBtnOver', sndBtnOver);
+        this.load.audio('sndBtnDown', sndBtnDown);
     }
   
     create() {

@@ -11,32 +11,32 @@ export default class Entity extends Phaser.GameObjects.Sprite {
     this.setData('isDead', false);
   }
 
-  // explode(canDestroy) {
-  //   if (!this.getData('isDead')) {
-  //     this.setTexture('sprExplosion');
-  //     this.play('sprExplosion');
+  explode(canDestroy) {
+    if (!this.getData('isDead')) {
+      this.setTexture('sprExplosion');
+      this.play('sprExplosion');
 
-  //     // eslint-disable-next-line max-len
-  //     this.scene.sfx.explosions[Phaser.Math.Between(0, this.scene.sfx.explosions.length - 1)].play();
+      // eslint-disable-next-line max-len
+      this.scene.sfx.explosions[Phaser.Math.Between(0, this.scene.sfx.explosions.length - 1)].play();
 
-  //     if (this.shootTimer !== undefined) {
-  //       if (this.shootTimer) {
-  //         this.shootTimer.remove(false);
-  //       }
-  //     }
+      if (this.shootTimer !== undefined) {
+        if (this.shootTimer) {
+          this.shootTimer.remove(false);
+        }
+      }
 
-  //     this.setAngle(0);
-  //     this.body.setVelocity(0, 0);
+      this.setAngle(0);
+      this.body.setVelocity(0, 0);
 
-  //     this.on('animationcomplete', () => {
-  //       if (canDestroy) {
-  //         this.destroy();
-  //       } else {
-  //         this.setVisible(false);
-  //       }
-  //     }, this);
+      this.on('animationcomplete', () => {
+        if (canDestroy) {
+          this.destroy();
+        } else {
+          this.setVisible(false);
+        }
+      }, this);
 
-  //     this.setData('isDead', true);
-  //   }
-  // }
+      this.setData('isDead', true);
+    }
+  }
 }

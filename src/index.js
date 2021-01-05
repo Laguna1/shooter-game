@@ -7,18 +7,16 @@ import SceneGameOver from './scenes/SceneGameOver';
 
 const config = {
   type: Phaser.AUTO,
-  width: 600,
+  width: 500,
   height: 600,
-  backgroundColor: 'black',
+  backgroundColor: '#eee',
   physics: {
     default: 'arcade',
     arcade: {
       gravity: { x: 0, y: 0 },
     },
   },
-  scene: [SceneMainMenu,
-    SceneMain,
-    SceneGameOver],
+  scene: [SceneMainMenu, SceneMain, SceneGameOver],
   pixelArt: true,
   roundPixels: true,
 };

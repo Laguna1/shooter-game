@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import ScrollingBackground from './background';
-import Player from '../objects/Entities';
+import Player from '../objects/Player';
 import GunShip from '../objects/Gunship';
 import CarrierShip from '../objects/CarrierShip';
 import ChaserShip from '../objects/ChaserShip';

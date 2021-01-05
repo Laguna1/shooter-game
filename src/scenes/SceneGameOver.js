@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import ScrollingBackground from './background';
 
-class SceneGameOver extends Phaser.Scene {
+export default class SceneGameOver extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneGameOver' });
   }
@@ -32,8 +32,8 @@ class SceneGameOver extends Phaser.Scene {
     this.btnRestart.on(
       'pointerover',
       () => {
-        this.btnRestart.setTexture('sprBtnRestartHover'); // set the button texture to sprBtnPlayHover
-        this.sfx.btnOver.play(); // play the button over sound
+        this.btnRestart.setTexture('sprBtnRestartHover');
+        this.sfx.btnOver.play();
       },
       this,
     );
@@ -75,5 +75,3 @@ class SceneGameOver extends Phaser.Scene {
     }
   }
 }
-
-export default SceneGameOver;

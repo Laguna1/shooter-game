@@ -21,6 +21,7 @@ import sndLaser from '../assets/sndLaser.wav';
 export default class SceneMain extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneMain' });
+    this.score = 0;
   }
 
   preload() {
@@ -52,6 +53,8 @@ export default class SceneMain extends Phaser.Scene {
   }
 
   create() {
+    this.scoreText = this.add.text(20, 20, 'score', { fontSize: '32px', fill: '#F7B924' });
+
     this.anims.create({
       key: 'sprEnemy0',
       frames: this.anims.generateFrameNumbers('sprEnemy0'),
@@ -155,6 +158,7 @@ export default class SceneMain extends Phaser.Scene {
           if (enemy.onDestroy !== undefined) {
             enemy.onDestroy();
           }
+          this.setScore();
           enemy.explode(true);
           playerLaser.destroy();
         }
@@ -195,6 +199,11 @@ export default class SceneMain extends Phaser.Scene {
       }
     }
     return arr;
+  }
+
+  setScore() {
+    this.score += 1;
+    this.scoreText.setText(`Score: ${this.score}`);
   }
 
   update() {

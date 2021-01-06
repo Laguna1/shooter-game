@@ -22,6 +22,7 @@ export default class SceneMain extends Phaser.Scene {
   constructor() {
     super({ key: 'SceneMain' });
     this.score = 0;
+    this.scoreText = undefined;
   }
 
   preload() {
@@ -53,7 +54,7 @@ export default class SceneMain extends Phaser.Scene {
   }
 
   create() {
-    this.scoreText = this.add.text(20, 20, 'score', { fontSize: '32px', fill: '#F7B924' });
+    this.scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#F7B924' });
 
     this.anims.create({
       key: 'sprEnemy0',
@@ -73,12 +74,14 @@ export default class SceneMain extends Phaser.Scene {
       frameRate: 20,
       repeat: 0,
     });
+    
     this.anims.create({
       key: 'sprPlayer',
       frames: this.anims.generateFrameNumbers('sprPlayer'),
       frameRate: 20,
       repeat: -1,
     });
+   
 
     this.sfx = {
       explosions: [
@@ -100,6 +103,7 @@ export default class SceneMain extends Phaser.Scene {
       this.game.config.height * 0.5,
       'sprPlayer',
     );
+    this.player.setScale(20); 
     console.log(this.player);
 
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);

@@ -19,7 +19,7 @@ export default class SceneMainMenu extends Phaser.Scene {
   preload() {
     this.load.image('sprBg0', sprBg0);
     this.load.image('sprBg1', sprBg1);
-    this.load.image('sprBtnPlay', sprBtnPlay).setScale(30);
+    this.load.image('sprBtnPlay', sprBtnPlay);
     this.load.image('sprBtnPlayHover', sprBtnPlayHover);
     this.load.image('sprBtnPlayDown', sprBtnPlayDown);
     this.load.image('sprBtnRestart', sprBtnRestart);

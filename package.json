@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "watch": "webpack --watch",
     "dev": "webpack --mode development",
-    "start": "http-server dist"
+    "start": "http-server dist -с-1"
   },
   "repository": {
     "type": "git",

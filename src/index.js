@@ -1,7 +1,9 @@
 /* eslint-disable no-use-before-define */
 
 import Phaser from 'phaser';
+
 import SceneMainMenu from './scenes/SceneMainMenu';
+import StartScene from './scenes/StartScene';
 import SceneMain from './scenes/SceneMain';
 import SceneGameOver from './scenes/SceneGameOver';
 
@@ -16,7 +18,7 @@ const config = {
       gravity: { x: 0, y: 0 },
     },
   },
-  scene: [SceneMainMenu, SceneMain, SceneGameOver],
+  scene: [SceneMainMenu, StartScene, SceneMain, SceneGameOver],
   pixelArt: true,
   roundPixels: true,
 };

@@ -48,7 +48,7 @@ export default class SceneMainMenu extends Phaser.Scene {
       'pointerover',
       () => {
         this.btnPlay.setTexture('sprBtnPlayHover');
-        this.sfx.btnOver.play(); // play the button over sound
+        this.sfx.btnOver.play();
       },
       this,
     );
@@ -70,7 +70,8 @@ export default class SceneMainMenu extends Phaser.Scene {
       'pointerup',
       () => {
         this.btnPlay.setTexture('sprBtnPlay');
-        this.scene.start('SceneMain');
+        // this.scene.start('SceneMain');
+        this.scene.start('StartScene');
       },
       this,
     );

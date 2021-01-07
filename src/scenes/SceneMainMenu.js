@@ -40,7 +40,7 @@ export default class SceneMainMenu extends Phaser.Scene {
       this.game.config.height * 0.5,
       'sprBtnPlay',
     );
-    
+
 
     this.btnPlay.setInteractive();
 

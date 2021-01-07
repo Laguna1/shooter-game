@@ -1,19 +1,19 @@
 /* eslint-disable no-use-before-define */
 
-import Phaser from 'phaser';
-
-import SceneMainMenu from './scenes/SceneMainMenu';
-import StartScene from './scenes/StartScene';
-import SceneMain from './scenes/SceneMain';
-import SceneGameOver from './scenes/SceneGameOver';
+import Phaser from "phaser";
+import "./style.css";
+import SceneMainMenu from "./scenes/SceneMainMenu";
+import StartScene from "./scenes/StartScene";
+import SceneMain from "./scenes/SceneMain";
+import SceneGameOver from "./scenes/SceneGameOver";
 
 const config = {
   type: Phaser.AUTO,
   width: 600,
   height: 600,
-  backgroundColor: 'black',
+  backgroundColor: "black",
   physics: {
-    default: 'arcade',
+    default: "arcade",
     arcade: {
       gravity: { x: 0, y: 0 },
     },

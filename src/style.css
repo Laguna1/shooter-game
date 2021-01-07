@@ -1,0 +1,12 @@
+.userInput {
+  display: none;
+  color: yellow;
+  font-size: 20px;
+  width: 250px;
+  height: 40px;
+  border: 2px solid red;
+  border-radius: 10%;
+  position: absolute;
+  top: 30%;
+  left: 18%;
+}

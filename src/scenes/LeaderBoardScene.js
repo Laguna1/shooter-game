@@ -27,12 +27,9 @@ export default class LeaderBoardScene extends Phaser.Scene {
       },
     );
     this.title2.setOrigin(0.5);
-    //this.input = document.getElementById('userName');
-   // this.playerName = this.input.value;
 
     const GAME_ID = '1Wz7xAsh8x7xog2n1GNz';
     const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
-
 
     const getCurrentScores = () => {
       fetch(`${BASE_URL}/games/${GAME_ID}/scores/`, {
@@ -40,8 +37,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
       })
         .then((response) => response.json())
         .then((response) => {
-
-          const scoresList = document.getElementById('scores')
+          const scoresList = document.getElementById('scores');
           response.result.forEach((obj) => {
             const listItem = document.createElement('li');
             listItem.innerHTML = `<span>${obj.user}:</span> ${obj.score}`;
@@ -51,17 +47,15 @@ export default class LeaderBoardScene extends Phaser.Scene {
         });
     };
 
-    
     getCurrentScores();
-   
-    const playAgain = this.add.text(100, 550, 'Bye Bye Player!', { fill: '#0f0',
+
+    this.add.text(100, 500, 'Bye Bye Player!', {
+      fill: '#0f0',
       fontFamily: 'monospace',
       fontSize: 48,
       fontStyle: 'bold',
-      color: '#f7b924',
       align: 'center',
     });
-  
 
     this.backgrounds = [];
     for (let i = 0; i < 5; i += 1) {

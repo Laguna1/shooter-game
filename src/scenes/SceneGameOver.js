@@ -142,8 +142,6 @@ export default class SceneGameOver extends Phaser.Scene {
       this,
     );
 
-   
-
 
     this.backgrounds = [];
     for (let i = 0; i < 5; i += 1) {

@@ -24,7 +24,7 @@ export default class StartScene extends Phaser.Scene {
         fontFamily: 'monospace',
         fontSize: 48,
         fontStyle: 'bold',
-        color: '#F7B924',
+        color: '#f7b924',
         align: 'center',
       },
     );

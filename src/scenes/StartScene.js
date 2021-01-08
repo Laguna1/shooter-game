@@ -31,7 +31,7 @@ export default class StartScene extends Phaser.Scene {
     this.title1.setOrigin(0.5);
     // btn
     this.input = document.getElementById('userName');
-    this.input.style.display = 'block';
+    this.input.style.visibility = 'visible';
     this.submitBtn = this.add.sprite(
       this.game.config.width * 0.5,
       this.game.config.height * 0.5,
@@ -42,7 +42,7 @@ export default class StartScene extends Phaser.Scene {
     this.submitBtn.on(
       'pointerup',
       () => {
-        this.input.style.display = 'none';
+        this.input.style.visibility = 'hidden';
         this.scene.start('SceneMain');
       },
       this,
@@ -55,12 +55,5 @@ export default class StartScene extends Phaser.Scene {
       const bg = new ScrollingBackground(this, key, i * 10);
       this.backgrounds.push(bg);
     }
-
-    // this.scene.start('SceneMain');
-    // console.log('start scenestart');
   }
-
-  // update() {
-
-  // }
 }

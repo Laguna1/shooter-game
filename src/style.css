@@ -1,11 +1,13 @@
 .userInput {
-  display: none;
-  color: yellow;
-  font-size: 20px;
+  visibility: hidden;
+  color: #f7b924;
+  background-color: black;
+  font-size: 24px;
+  font-weight: bold;
   width: 250px;
   height: 40px;
-  border: 2px solid red;
-  border-radius: 10%;
+  border: 7px solid #f7b924;
+  border-radius: 44%;
   position: absolute;
   top: 30%;
   left: 18%;

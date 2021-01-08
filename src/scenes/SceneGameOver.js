@@ -11,11 +11,20 @@ export default class SceneGameOver extends Phaser.Scene {
       fontFamily: 'monospace',
       fontSize: 48,
       fontStyle: 'bold',
-      color: '#F7B924',
+      color: '#f7b924',
       align: 'center',
     });
-    this.title.setOrigin(0.5);
 
+    this.title.setOrigin(0.5);
+    this.input = document.getElementById('userName');
+    this.playerName = this.input.value;
+    this.add.text(this.game.config.width * 0.4, 180, this.playerName, {
+      fontFamily: 'monospace',
+      fontSize: 32,
+      fontStyle: 'bold',
+      color: '#f7b924',
+      align: 'center',
+    });
     this.sfx = {
       btnOver: this.sound.add('sndBtnOver'),
       btnDown: this.sound.add('sndBtnDown'),
@@ -55,10 +64,12 @@ export default class SceneGameOver extends Phaser.Scene {
       'pointerup',
       () => {
         this.btnRestart.setTexture('sprBtnRestart');
-        this.scene.start('SceneMain');
+        // this.scene.start('SceneMain');
+        this.scene.start('LeaderBoardScene');
       },
       this,
     );
+
 
     this.backgrounds = [];
     for (let i = 0; i < 5; i += 1) {

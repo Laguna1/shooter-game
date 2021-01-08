@@ -6,6 +6,10 @@ export default class SceneGameOver extends Phaser.Scene {
     super({ key: 'SceneGameOver' });
   }
 
+  init(data) {
+    this.score = data.score;
+  }
+
   create() {
     this.title = this.add.text(this.game.config.width * 0.5, 128, 'GAME OVER', {
       fontFamily: 'monospace',
@@ -25,6 +29,17 @@ export default class SceneGameOver extends Phaser.Scene {
       color: '#f7b924',
       align: 'center',
     });
+
+
+    this.add.text(this.game.config.width * 0.7, 180, this.score, {
+      fontFamily: 'monospace',
+      fontSize: 32,
+      fontStyle: 'bold',
+      color: '#f7b924',
+      align: 'center',
+    });
+
+
     this.sfx = {
       btnOver: this.sound.add('sndBtnOver'),
       btnDown: this.sound.add('sndBtnDown'),
@@ -64,11 +79,70 @@ export default class SceneGameOver extends Phaser.Scene {
       'pointerup',
       () => {
         this.btnRestart.setTexture('sprBtnRestart');
+        this.scene.start('SceneMain');
+        // this.scene.start('LeaderBoardScene');
+      },
+      this,
+    );
+    const GAME_ID = '1Wz7xAsh8x7xog2n1GNz';
+    const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
+    const postScore = () => {
+      fetch(`${BASE_URL}/games/${GAME_ID}/scores/`, {
+        mode: 'cors',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          user: this.playerName,
+          score: this.score,
+        }),
+      });
+    };
+    postScore();
+
+    // btn leaderboard
+    this.btnLeadBoard = this.add.sprite(
+      this.game.config.width * 0.5,
+      this.game.config.height * 0.8,
+      'sprBtnRestart',
+    );
+
+    this.btnLeadBoard.setInteractive();
+
+    this.btnLeadBoard.on(
+      'pointerover',
+      () => {
+        this.btnLeadBoard.setTexture('sprBtnRestartHover');
+        this.sfx.btnOver.play();
+      },
+      this,
+    );
+
+    this.btnLeadBoard.on('pointerout', () => {
+      this.setTexture('sprBtnRestart');
+    });
+
+    this.btnLeadBoard.on(
+      'pointerdown',
+      () => {
+        this.btnLeadBoard.setTexture('sprBtnRestartDown');
+        this.sfx.btnDown.play();
+      },
+      this,
+    );
+
+    this.btnLeadBoard.on(
+      'pointerup',
+      () => {
+        this.btnLeadBoard.setTexture('sprBtnRestart');
         // this.scene.start('SceneMain');
         this.scene.start('LeaderBoardScene');
       },
       this,
     );
+
+   
 
 
     this.backgrounds = [];

@@ -27,7 +27,8 @@ export default class LeaderBoardScene extends Phaser.Scene {
       },
     );
     this.title2.setOrigin(0.5);
-
+    //this.input = document.getElementById('userName');
+   // this.playerName = this.input.value;
 
     const GAME_ID = '1Wz7xAsh8x7xog2n1GNz';
     const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
@@ -39,42 +40,28 @@ export default class LeaderBoardScene extends Phaser.Scene {
       })
         .then((response) => response.json())
         .then((response) => {
-          scoresList.innerText = '';
+
+          const scoresList = document.getElementById('scores')
           response.result.forEach((obj) => {
             const listItem = document.createElement('li');
-            listItem.innerHTML = `<span>${obj.playerName}:</span> ${obj.score}`;
+            listItem.innerHTML = `<span>${obj.user}:</span> ${obj.score}`;
             scoresList.appendChild(listItem);
             console.log(response);
           });
         });
     };
+
+    
     getCurrentScores();
-
-    const postScore = () => {
-      const name = document.getElementById('player').value;
-      const score = parseInt(document.getElementById('score').value);
-      fetch(`${BASE_URL}/games/${GAME_ID}/scores/`, {
-        mode: 'cors',
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          user: name,
-          score,
-        }),
-      })
-        .then((response) => response.json())
-        .then((response) => {
-          alert(response.result);
-        });
-    };
-
-    // const refreshBtn = document.getElementById("refresh");
-    // refreshBtn.onclick = getCurrentScores;
-    // const saveScoreBtn = document.getElementById("save-score");
-    // saveScoreBtn.onclick = postScore;
-
+   
+    const playAgain = this.add.text(100, 550, 'Bye Bye Player!', { fill: '#0f0',
+      fontFamily: 'monospace',
+      fontSize: 48,
+      fontStyle: 'bold',
+      color: '#f7b924',
+      align: 'center',
+    });
+  
 
     this.backgrounds = [];
     for (let i = 0; i < 5; i += 1) {

@@ -19,7 +19,13 @@ const config = {
       gravity: { x: 0, y: 0 },
     },
   },
-  scene: [SceneMainMenu, StartScene, SceneMain, SceneGameOver, LeaderBoardScene],
+  scene: [
+    SceneMainMenu,
+    StartScene,
+    SceneMain,
+    SceneGameOver,
+    LeaderBoardScene,
+  ],
   pixelArt: true,
   roundPixels: true,
 };

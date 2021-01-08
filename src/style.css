@@ -12,3 +12,14 @@
   top: 30%;
   left: 18%;
 }
+
+#scores {
+  position: absolute;
+  top: 30%;
+  left: 18%;
+  color: #f7b924;
+  background-color: black;
+  font-size: 24px;
+  font-weight: bold;
+  width: 250px;
+}

@@ -7,16 +7,15 @@
   width: 250px;
   height: 40px;
   border: 7px solid #f7b924;
-  border-radius: 44%;
   position: absolute;
-  top: 30%;
-  left: 18%;
+  top: 20%;
+  left: 13%;
 }
 
 #scores {
   position: absolute;
-  top: 30%;
-  left: 18%;
+  top: 18%;
+  left: 15%;
   color: #f7b924;
   background-color: black;
   font-size: 24px;

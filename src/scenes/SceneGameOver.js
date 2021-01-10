@@ -22,7 +22,7 @@ export default class SceneGameOver extends Phaser.Scene {
     this.title.setOrigin(0.5);
     this.input = document.getElementById('userName');
     this.playerName = this.input.value;
-    this.add.text(this.game.config.width * 0.4, 180, this.playerName, {
+    this.add.text(this.game.config.width * 0.2, 180, this.playerName, {
       fontFamily: 'monospace',
       fontSize: 32,
       fontStyle: 'bold',
@@ -44,7 +44,7 @@ export default class SceneGameOver extends Phaser.Scene {
       btnOver: this.sound.add('sndBtnOver'),
       btnDown: this.sound.add('sndBtnDown'),
     };
-
+// 1st btn
     this.btnRestart = this.add.sprite(
       this.game.config.width * 0.5,
       this.game.config.height * 0.5,
@@ -80,10 +80,10 @@ export default class SceneGameOver extends Phaser.Scene {
       () => {
         this.btnRestart.setTexture('sprBtnRestart');
         this.scene.start('SceneMain');
-        // this.scene.start('LeaderBoardScene');
-      },
+       },
       this,
     );
+    // end 1st btn
     const GAME_ID = '1Wz7xAsh8x7xog2n1GNz';
     const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
     const postScore = () => {
@@ -136,12 +136,11 @@ export default class SceneGameOver extends Phaser.Scene {
       'pointerup',
       () => {
         this.btnLeadBoard.setTexture('sprBtnRestart');
-        // this.scene.start('SceneMain');
         this.scene.start('LeaderBoardScene');
       },
       this,
     );
-
+// end 2nd btn
 
     this.backgrounds = [];
     for (let i = 0; i < 5; i += 1) {

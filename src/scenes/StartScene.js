@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import ScrollingBackground from './background';
+import Button from '../objects/Button';
 import sprBg0 from '../assets/sprBg0.png';
 import sprBg1 from '../assets/sprBg1.png';
 import submitBtn from '../assets/sprBtnPlay.png';
@@ -30,23 +31,40 @@ export default class StartScene extends Phaser.Scene {
     );
     this.title1.setOrigin(0.5);
     // btn
+    // this.input = document.getElementById('userName');
+    // this.input.style.visibility = 'visible';
+    // this.submitBtn = this.add.sprite(
+    //   this.game.config.width * 0.5,
+    //   this.game.config.height * 0.5,
+    //   'submitBtn',
+    // );
+    // this.submitBtn.setInteractive();
+
+    // this.submitBtn.on(
+    //   'pointerup',
+    //   () => {
+    //     this.input.style.visibility = 'hidden';
+    //     this.scene.start('SceneMain');
+    //   },
+    //   this,
+    // );
+    //end btn
+
     this.input = document.getElementById('userName');
     this.input.style.visibility = 'visible';
-    this.submitBtn = this.add.sprite(
-      this.game.config.width * 0.5,
-      this.game.config.height * 0.5,
-      'submitBtn',
-    );
-    this.submitBtn.setInteractive();
-
-    this.submitBtn.on(
+    this.playButton = new Button(this, 400, 500, 'blue_button1', 'blue_button2', 'Play', 'SceneMain');
+    // this.btn2 = new Button(this, btnWidth, btnHeight + 100, 'blue_button1', 'blue_button2', 'Scores', 'Leaderboard');
+    // this.btn2 = new Button(this, btnWidth, btnHeight + 100, 'blue_button1', 'blue_button2', 'Scores', 'Leaderboard');
+    this.playButton.setInteractive();
+    this.playButton.on(
       'pointerup',
       () => {
         this.input.style.visibility = 'hidden';
         this.scene.start('SceneMain');
-      },
-      this,
-    );
+      }
+
+    )
+    
 
     this.backgrounds = [];
     for (let i = 0; i < 5; i += 1) {

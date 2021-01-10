@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import ScrollingBackground from './background';
+import Button from '../objects/Button';
 
 export default class SceneGameOver extends Phaser.Scene {
   constructor() {
@@ -140,7 +141,10 @@ export default class SceneGameOver extends Phaser.Scene {
       },
       this,
     );
-// end 2nd btn
+// // end 2nd btn
+// //  this.playButton = new Button(this, 400, 500, 'blue_button1', 'blue_button2', 'Play', 'SceneMain');
+//  this.btnScores = new Button(this, btnWidth, btnHeight + 100, 'blue_button1', 'blue_button2', 'Scores', 'Leaderboard');
+// // this.btn2 = new Button(this, btnWidth, btnHeight + 100, 'blue_button1', 'blue_button2', 'Scores', 'Leaderboard');
 
     this.backgrounds = [];
     for (let i = 0; i < 5; i += 1) {

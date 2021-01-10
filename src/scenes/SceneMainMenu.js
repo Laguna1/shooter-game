@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import ScrollingBackground from './background';
+import Button from '../objects/Button';
 import sprBg0 from '../assets/sprBg0.png';
 import sprBg1 from '../assets/sprBg1.png';
 import sprBtnPlay from '../assets/sprBtnPlay.png';
@@ -8,6 +9,8 @@ import sprBtnPlayDown from '../assets/sprBtnPlayDown.png';
 import sprBtnRestart from '../assets/sprBtnRestart.png';
 import sprBtnRestartHover from '../assets/sprBtnRestartHover.png';
 import sprBtnRestartDown from '../assets/sprBtnRestartDown.png';
+import blue_button1 from '../assets/blue_button1.png';
+import blue_button2 from '../assets/blue_button2.png';
 import sndBtnOver from '../assets/sndBtnOver.wav';
 import sndBtnDown from '../assets/sndBtnDown.wav';
 
@@ -25,6 +28,8 @@ export default class SceneMainMenu extends Phaser.Scene {
     this.load.image('sprBtnRestart', sprBtnRestart);
     this.load.image('sprBtnRestartHover', sprBtnRestartHover);
     this.load.image('sprBtnRestartDown', sprBtnRestartDown);
+    this.load.image('blue_button1', blue_button1);
+    this.load.image('blue_button2', blue_button2);
     this.load.audio('sndBtnOver', sndBtnOver);
     this.load.audio('sndBtnDown', sndBtnDown);
   }
@@ -35,56 +40,59 @@ export default class SceneMainMenu extends Phaser.Scene {
       btnDown: this.sound.add('sndBtnDown'),
     };
 
-    this.btnPlay = this.add.sprite(
-      this.game.config.width * 0.5,
-      this.game.config.height * 0.5,
-      'sprBtnPlay',
-    );
+    // this.btnPlay = this.add.sprite(
+    //   this.game.config.width * 0.5,
+    //   this.game.config.height * 0.5,
+    //   'sprBtnPlay',
+    // );
 
 
-    this.btnPlay.setInteractive();
+    // this.btnPlay.setInteractive();
 
-    this.btnPlay.on(
-      'pointerover',
-      () => {
-        this.btnPlay.setTexture('sprBtnPlayHover');
-        this.sfx.btnOver.play();
-      },
-      this,
-    );
+    // this.btnPlay.on(
+    //   'pointerover',
+    //   () => {
+    //     this.btnPlay.setTexture('sprBtnPlayHover');
+    //     this.sfx.btnOver.play();
+    //   },
+    //   this,
+    // );
 
-    this.btnPlay.on('pointerout', () => {
-      this.setTexture('sprBtnPlay');
-    });
+    // this.btnPlay.on('pointerout', () => {
+    //   this.setTexture('sprBtnPlay');
+    // });
 
-    this.btnPlay.on(
-      'pointerdown',
-      () => {
-        this.btnPlay.setTexture('sprBtnPlayDown');
-        this.sfx.btnDown.play();
-      },
-      this,
-    );
+    // this.btnPlay.on(
+    //   'pointerdown',
+    //   () => {
+    //     this.btnPlay.setTexture('sprBtnPlayDown');
+    //     this.sfx.btnDown.play();
+    //   },
+    //   this,
+    // );
 
-    this.btnPlay.on(
-      'pointerup',
-      () => {
-        this.btnPlay.setTexture('sprBtnPlay');
-        // this.scene.start('SceneMain');
-        this.scene.start('StartScene');
-      },
-      this,
-    );
+    // this.btnPlay.on(
+    //   'pointerup',
+    //   () => {
+    //     this.btnPlay.setTexture('sprBtnPlay');
+    //     // this.scene.start('SceneMain');
+    //     this.scene.start('StartScene');
+    //   },
+    //   this,
+    // );
+
+    this.registerButton = new Button(this, 300, 350, 'blue_button1', 'blue_button2', 'REGISTER', 'StartScene');
+    // this.optionsButton = new Button(this, btnWidth, btnHeight, 'blue_button1', 'blue_button2', 'Options', 'Options');
 
     this.title = this.add.text(
       this.game.config.width * 0.5,
-      128,
+      200,
       'SPACE PATROL',
       {
         fontFamily: 'monospace',
-        fontSize: 48,
+        fontSize: 72,
         fontStyle: 'bold',
-        color: '#F7B924',
+        color: '#35BAF3',
         align: 'center',
       },
     );

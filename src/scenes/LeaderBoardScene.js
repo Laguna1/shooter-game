@@ -40,14 +40,17 @@ export default class LeaderBoardScene extends Phaser.Scene {
           const scoresList = document.getElementById('scores');
           response.result.forEach((obj) => {
             const listItem = document.createElement('li');
-            listItem.innerHTML = `<span>${obj.user}:</span> ${obj.score}`;
+            listItem.innerHTML = `<span>${obj.user}: </span> ${obj.score}`;
             scoresList.appendChild(listItem);
             console.log(response);
           });
         });
     };
 
+
     getCurrentScores();
+
+    this.playButton = new Button(this, 400, 500, 'blue_button1', 'blue_button2', 'Play Again', 'SceneMain');
 
     this.add.text(100, 500, 'Bye Bye Player!', {
       fill: '#0f0',

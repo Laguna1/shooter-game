@@ -45,7 +45,7 @@ export default class SceneGameOver extends Phaser.Scene {
       btnOver: this.sound.add('sndBtnOver'),
       btnDown: this.sound.add('sndBtnDown'),
     };
-// 1st btn
+    // 1st btn
     this.btnRestart = this.add.sprite(
       this.game.config.width * 0.5,
       this.game.config.height * 0.5,
@@ -81,7 +81,7 @@ export default class SceneGameOver extends Phaser.Scene {
       () => {
         this.btnRestart.setTexture('sprBtnRestart');
         this.scene.start('SceneMain');
-       },
+      },
       this,
     );
     // end 1st btn
@@ -141,10 +141,9 @@ export default class SceneGameOver extends Phaser.Scene {
       },
       this,
     );
-// // end 2nd btn
-// //  this.playButton = new Button(this, 400, 500, 'blue_button1', 'blue_button2', 'Play', 'SceneMain');
-//  this.btnScores = new Button(this, btnWidth, btnHeight + 100, 'blue_button1', 'blue_button2', 'Scores', 'Leaderboard');
-// // this.btn2 = new Button(this, btnWidth, btnHeight + 100, 'blue_button1', 'blue_button2', 'Scores', 'Leaderboard');
+    // // end 2nd btn
+    this.playButton = new Button(this, 300, 400, 'blue_button1', 'blue_button2', 'Restart', 'SceneMain');
+    this.btnScores = new Button(this, 300, 500, 'blue_button1', 'blue_button2', 'Scores', 'LeaderboardScene');
 
     this.backgrounds = [];
     for (let i = 0; i < 5; i += 1) {

@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import ScrollingBackground from './background';
+import Button from '../objects/Button';
 import sprBg0 from '../assets/sprBg0.png';
 import sprBg1 from '../assets/sprBg1.png';
 

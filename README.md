@@ -1,18 +1,23 @@
 # SPACE PATROL
 Creating a shooter - game using Phaser and Webpack.
 
-![Weather App](./src/Screenshot.png?raw=true "Main Page")
- 
+![Space Patrol](./src/assets/screen1.png)
+![Space Patrol](./src/assets/screen2.png)
+![Space Patrol](./src/assets/screen3.png)
+![Space Patrol](./src/assets/screen4.png)
+
 ## Built With
  - HTML
  - CSS
  - JS
  - Webpack
+ - Phaser3
+ - Jest
 
 
 ## Live Demo
 
-[Live demo](https://raw.githack.com/Laguna1/Weather-App-JS/weather-branch/dist/index.html)
+[Live demo](https://raw.githack.com/Laguna1/shooter-game/game-v5/dist/index.html)
 
 ## About the game:
 #### The main character 
@@ -28,9 +33,14 @@ Creating a shooter - game using Phaser and Webpack.
 
 
 ## Installation and Usage
- - Clone the repository git clone https://github.com/Laguna1/Weather-App-JS
- - cd Weather-App-JS
- - Open the dist/index.html file in your browser
+ - Clone the repository git clone https://github.com/Laguna1/shooter-game
+ - cd shooter-game
+ - Run npm i to get all the dependencies.
+ - Run npm run build for one time build of bundle after changes.
+ - Run npm start to start the server.
+   By default after that game will be available on:
+  http://127.0.0.1:8080
+  http://192.168.0.108:8080
  
 
 
@@ -61,5 +71,3 @@ Thanks to Microverse for making this possible!
 #### The icons we're used for this web application are created by the Graphic Designer Ashley Jager. [Link](https://github.com/manifestinteractive/weather-underground-icons)
 
 #### Image by <a href="https://pixabay.com/users/artisticoperations-4161274/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5303057">F. Muhammad</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5303057">Pixabay</a>
-
-

@@ -23,13 +23,15 @@
   "homepage": "https://github.com/Laguna1/shooter-game#readme",
   "dependencies": {
     "http-server": "^0.12.3",
+    "identity-obj-proxy": "^3.0.0",
     "phaser": "^3.50.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",

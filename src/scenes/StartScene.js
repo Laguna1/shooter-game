@@ -31,7 +31,7 @@ export default class StartScene extends Phaser.Scene {
 
     this.nameInput = document.getElementById('userName');
     this.nameInput.style.visibility = 'visible';
-    
+
     this.playButton = new Button(this, 290, 400, 'blue_button1', 'blue_button2', 'PLAY', 'SceneMain');
 
     this.backgrounds = [];

@@ -32,4 +32,8 @@ const config = {
 
 // eslint-disable-next-line no-unused-vars
 const game = new Phaser.Game(config);
+
+export const sum = (a, b) => a + b;
+module.exports = sum;
+
 export default game;

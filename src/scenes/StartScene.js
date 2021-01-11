@@ -3,7 +3,6 @@ import ScrollingBackground from './background';
 import Button from '../objects/Button';
 import sprBg0 from '../assets/sprBg0.png';
 import sprBg1 from '../assets/sprBg1.png';
-import submitBtn from '../assets/sprBtnPlay.png';
 
 export default class StartScene extends Phaser.Scene {
   constructor() {
@@ -13,7 +12,6 @@ export default class StartScene extends Phaser.Scene {
   preload() {
     this.load.image('sprBg0', sprBg0);
     this.load.image('sprBg1', sprBg1);
-    this.load.image('submitBtn', submitBtn);
   }
 
   create() {
@@ -25,52 +23,16 @@ export default class StartScene extends Phaser.Scene {
         fontFamily: 'monospace',
         fontSize: 48,
         fontStyle: 'bold',
-        color: '#1FA7E1',
+        color: '#1fa7e1',
         align: 'center',
       },
     );
     this.title1.setOrigin(0.5);
-    // btn
-    // this.input = document.getElementById('userName');
-    // this.input.style.visibility = 'visible';
-    // this.submitBtn = this.add.sprite(
-    //   this.game.config.width * 0.5,
-    //   this.game.config.height * 0.5,
-    //   'submitBtn',
-    // );
-    // this.submitBtn.setInteractive();
 
-    // this.submitBtn.on(
-    //   'pointerup',
-    //   () => {
-    //     this.input.style.visibility = 'hidden';
-    //     this.scene.start('SceneMain');
-    //   },
-    //   this,
-    // );
-    // end btn
-
-    this.nameInput= document.getElementById('userName');
+    this.nameInput = document.getElementById('userName');
     this.nameInput.style.visibility = 'visible';
-    this.playButton = new Button(this, 290, 400, 'blue_button1', 'blue_button2', 'PLAY', 'SceneMain');
-   
-    // this.playButton.on('pointerup', () => {
-    //   this.input.style.visibility = 'hidden';
-    // });
     
-
-
-   
-    // this.playButton.setInteractive();
-    // this.playButton.on(
-    //   'pointerup',
-    //   () => {
-    //     this.input.style.visibility = 'hidden';
-    //     this.scene.start('SceneMain');
-    //   },
-    //   this,
-    // );
-
+    this.playButton = new Button(this, 290, 400, 'blue_button1', 'blue_button2', 'PLAY', 'SceneMain');
 
     this.backgrounds = [];
     for (let i = 0; i < 5; i += 1) {

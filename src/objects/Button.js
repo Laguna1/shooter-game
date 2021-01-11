@@ -15,10 +15,10 @@ export default class Button extends Phaser.GameObjects.Container {
     this.add(this.text);
 
     this.button.on('pointerdown', () => {
-      if(this.scene.nameInput !== undefined) {
+      if (this.scene.nameInput !== undefined) {
         this.scene.nameInput.style.visibility = 'hidden';
       }
-    
+
       this.scene.scene.start(targetScene);
     });
 

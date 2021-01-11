@@ -4,7 +4,7 @@
   "description": "Creating a game - shooter using Phaser, Webpack.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack --mode production",
     "watch": "webpack --watch",
     "dev": "webpack --mode development",
@@ -42,6 +42,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "image-webpack-loader": "^7.0.1",
+    "jest": "^26.6.3",
     "raw-loader": "^4.0.2",
     "style-loader": "^2.0.0",
     "stylelint": "^13.3.3",

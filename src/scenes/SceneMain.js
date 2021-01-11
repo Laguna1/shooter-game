@@ -53,7 +53,7 @@ export default class SceneMain extends Phaser.Scene {
   create() {
     this.scoreText = this.add.text(16, 16, 'score: 0', {
       fontSize: '32px',
-      fill: '#F7B924',
+      fill: '#f7b924',
     });
 
     this.anims.create({
@@ -75,13 +75,6 @@ export default class SceneMain extends Phaser.Scene {
       repeat: 0,
     });
 
-    // this.anims.create({
-    //   key: 'sprPlayer',
-    //   frames: this.anims.generateFrameNumbers('sprPlayer'),
-    //   frameRate: 20,
-    //   repeat: -1,
-    // });
-
     this.sfx = {
       explosions: [
         this.sound.add('sndExplode0'),
@@ -102,7 +95,7 @@ export default class SceneMain extends Phaser.Scene {
       this.game.config.height * 0.5,
       'sprPlayer',
     );
-    this.player.setScale(0.2);
+    this.player.setScale(0.15);
 
     this.cursors = this.input.keyboard.createCursorKeys();
     this.keySpace = this.input.keyboard.addKey(

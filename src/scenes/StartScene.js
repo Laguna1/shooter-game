@@ -25,7 +25,7 @@ export default class StartScene extends Phaser.Scene {
         fontFamily: 'monospace',
         fontSize: 48,
         fontStyle: 'bold',
-        color: '#f7b924',
+        color: '#1FA7E1',
         align: 'center',
       },
     );
@@ -50,18 +50,26 @@ export default class StartScene extends Phaser.Scene {
     // );
     // end btn
 
-    this.input = document.getElementById('userName');
-    this.input.style.visibility = 'visible';
-    this.playButton = new Button(this, 400, 500, 'blue_button1', 'blue_button2', 'Play', 'SceneMain');
-    this.playButton.setInteractive();
-    this.playButton.on(
-      'pointerup',
-      () => {
-        this.input.style.visibility = 'hidden';
-        this.scene.start('SceneMain');
-      },
+    this.nameInput= document.getElementById('userName');
+    this.nameInput.style.visibility = 'visible';
+    this.playButton = new Button(this, 290, 400, 'blue_button1', 'blue_button2', 'PLAY', 'SceneMain');
+   
+    // this.playButton.on('pointerup', () => {
+    //   this.input.style.visibility = 'hidden';
+    // });
+    
 
-    );
+
+   
+    // this.playButton.setInteractive();
+    // this.playButton.on(
+    //   'pointerup',
+    //   () => {
+    //     this.input.style.visibility = 'hidden';
+    //     this.scene.start('SceneMain');
+    //   },
+    //   this,
+    // );
 
 
     this.backgrounds = [];

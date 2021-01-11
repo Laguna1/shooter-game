@@ -6,16 +6,16 @@
   font-weight: bold;
   width: 250px;
   height: 40px;
-  border: 7px solid #f7b924;
+  border: 7px solid #1faae1;
   position: absolute;
-  top: 20%;
-  left: 13%;
+  top: 220px;
+  left: 167px;
 }
 
 #scores {
   position: absolute;
-  top: 18%;
-  left: 15%;
+  top: 190px;
+  left: 212px;
   color: #f7b924;
   background-color: black;
   font-size: 24px;

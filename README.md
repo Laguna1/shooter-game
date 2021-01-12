@@ -12,7 +12,7 @@ Creating a shooter - game using Phaser3 and Webpack.
 
 ## Live Demo
 
-[Live demo](https://raw.githack.com/Laguna1/shooter-game/game-v5/dist/index.html)
+[Live demo](https://github.com/Laguna1/shooter-game/blob/development/dist/index.html)
 
 
 ![Space Patrol](./src/assets/screen1.png)
@@ -39,12 +39,15 @@ Creating a shooter - game using Phaser3 and Webpack.
 ## Installation and Usage
  - Clone the repository git clone https://github.com/Laguna1/shooter-game
  - cd shooter-game
- - Run npm i to get all the dependencies.
- - Run npm run build for one time build of bundle after changes.
- - Run npm start to start the server.
+ - Run `npm i` to get all the dependencies.
+ - Run `npm run build` for one time build of bundle after changes.
+ - Run `npm start` to start the server.
    By default after that game will be available on:
-  http://127.0.0.1:8080
+  http://127.0.0.1:8080 or
   http://192.168.0.108:8080
+
+## Tests
+- Run `npm run test` for testing
  
 
 

@@ -44,7 +44,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
             const listItem = document.createElement('li');
             listItem.innerHTML = `<span>${obj.user}: </span> ${obj.score}`;
             scoresList.appendChild(listItem);
-            console.log(response);
+            return response;
           });
         });
     };

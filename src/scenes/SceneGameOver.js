@@ -61,16 +61,6 @@ export default class SceneGameOver extends Phaser.Scene {
     };
     postScore();
 
-    // this.playButton = new Button(
-    //   this,
-    //   300,
-    //   350,
-    //   "blue_button1",
-    //   "blue_button2",
-    //   "PLAY AGAIN",
-    //   "SceneMain"
-    // );
-
     this.btnScores = new Button(
       this,
       300,

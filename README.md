@@ -12,7 +12,7 @@ Creating a shooter - game using Phaser3 and Webpack.
 
 ## Live Demo
 
-[Live demo](https://github.com/Laguna1/shooter-game/blob/development/dist/index.html)
+[Live demo](https://rawcdn.githack.com/Laguna1/shooter-game/ca3bf83f888ff93257f46940dc842cb00895cb59/dist/index.html)
 
 
 ![Space Patrol](./src/assets/screen1.png)

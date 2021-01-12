@@ -34,7 +34,6 @@
   },
   "homepage": "https://github.com/Laguna1/shooter-game#readme",
   "dependencies": {
-    "canvas-prebuilt": "^2.0.0-alpha.14",
     "http-server": "^0.12.3",
     "phaser": "^3.50.0"
   },

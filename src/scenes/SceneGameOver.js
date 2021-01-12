@@ -57,7 +57,7 @@ export default class SceneGameOver extends Phaser.Scene {
           user: this.playerName,
           score: this.score,
         }),
-      });
+      }).catch((error) => error.json());
     };
     postScore();
 

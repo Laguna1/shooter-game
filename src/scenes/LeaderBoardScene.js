@@ -46,6 +46,12 @@ export default class LeaderBoardScene extends Phaser.Scene {
             scoresList.appendChild(listItem);
             return response;
           });
+        })
+        .catch((error) => {
+          const scoresList = document.getElementById('scores');
+          const listItem = document.createElement('li');
+          listItem.innerHTML = error;
+          scoresList.appendChild(listItem);
         });
     };
     getCurrentScores();

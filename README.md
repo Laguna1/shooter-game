@@ -1,10 +1,5 @@
 # SPACE PATROL
-Creating a shooter - game using Phaser and Webpack.
-
-![Space Patrol](./src/assets/screen1.png)
-![Space Patrol](./src/assets/screen2.png)
-![Space Patrol](./src/assets/screen3.png)
-![Space Patrol](./src/assets/screen4.png)
+Creating a shooter - game using Phaser3 and Webpack.
 
 ## Built With
  - HTML
@@ -19,6 +14,13 @@ Creating a shooter - game using Phaser and Webpack.
 
 [Live demo](https://raw.githack.com/Laguna1/shooter-game/game-v5/dist/index.html)
 
+
+![Space Patrol](./src/assets/screen1.png)
+![Space Patrol](./src/assets/screen2.png)
+![Space Patrol](./src/assets/screen3.png)
+![Space Patrol](./src/assets/screen4.png)
+
+
 ## About the game:
 #### The main character 
 - is a spaceship commander who patrols his sector of responsibility.
@@ -29,7 +31,9 @@ Creating a shooter - game using Phaser and Webpack.
 #### Mobility 
 - the ship can move forward, backward, right, left.
 #### The enemies 
-- a squadron of alien ships and asteroids - can be destroyed by shots. 
+- a squadron of alien ships and asteroids - can be destroyed by shots.
+### How to play
+- Move the player using the arrows on the keyboard, shoot with the space bar on the keyboard
 
 
 ## Installation and Usage
@@ -68,6 +72,4 @@ Acknowledgments
 Thanks to Microverse for making this possible!
 
 
-#### The icons we're used for this web application are created by the Graphic Designer Ashley Jager. [Link](https://github.com/manifestinteractive/weather-underground-icons)
-
-#### Image by <a href="https://pixabay.com/users/artisticoperations-4161274/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5303057">F. Muhammad</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5303057">Pixabay</a>
+#### The images, sprites and sounds from  [OpenGameArt](https://opengameart.org/art-search?keys=shooter)

@@ -1,0 +1,24 @@
+.userInput {
+  visibility: hidden;
+  color: #f7b924;
+  background-color: black;
+  font-size: 24px;
+  font-weight: bold;
+  width: 250px;
+  height: 40px;
+  border: 7px solid #1faae1;
+  position: absolute;
+  top: 220px;
+  left: 167px;
+}
+
+#scores {
+  position: absolute;
+  top: 190px;
+  left: 212px;
+  color: #f7b924;
+  background-color: black;
+  font-size: 24px;
+  font-weight: bold;
+  width: 250px;
+}
